@@ -16,14 +16,21 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation onContactClick={scrollToContact} />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Effets de lumière diffuse en arrière-plan */}
+      <div className="absolute inset-0 light-effect"></div>
+      <div className="absolute inset-0 light-effect-secondary"></div>
+      
+      {/* Contenu principal */}
+      <div className="relative z-10">
+        <Navigation onContactClick={scrollToContact} />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+        <Footer />
+      </div>
       <Toaster />
     </div>
   )
